@@ -1,0 +1,9 @@
+SPLASH:
+  # It't docker image for scrapinghub/splash
+  URL: 127.0.0.1
+  PORT: 8050
+
+JServer:
+  # It't docker image for sadeye/jserver:slim
+  URL: 127.0.0.1
+  PORT: 18080

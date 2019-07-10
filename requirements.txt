@@ -1,0 +1,7 @@
+certifi==2019.6.16
+chardet==3.0.4
+idna==2.8
+pyaml==19.4.1
+PyYAML==5.1.1
+requests==2.22.0
+urllib3==1.25.3
