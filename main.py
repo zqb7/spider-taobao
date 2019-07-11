@@ -52,7 +52,7 @@ class Spider(object):
     @staticmethod
     def save(data):
         with open("data.json", 'a+', encoding='utf-8') as f:
-            f.write(str(data) + '\n')
+            json.dump(data, f, ensure_ascii=False)
 
 
 if __name__ == '__main__':
