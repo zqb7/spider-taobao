@@ -1,6 +1,7 @@
 import requests
 import json
-from common.util import Cookie, generate_js, JServer, generate_params
+from common.util import Cookie, generate_js, generate_params
+from runjs import runjs
 """
 主要参数是_m_h5_tk
 sign生成的主要条件是：时间戳+token+页码数------别的已经固定了
@@ -32,7 +33,7 @@ class Spider(object):
         res = self.req.get("https://h5api.m.taobao.com/h5/mtop.taobao.idle.home.nextfresh/3.0/",
                            timeout=10,
                            headers=HEADER,
-                           params=generate_params(timestamp, JServer().get(js)["message"], page_number))
+                           params=generate_params(timestamp, runjs.runjs(js), page_number))
         try:
             json_str = res.text.strip().rstrip(")").lstrip("mtopjsonp5(")
             json_data = json.loads(json_str, strict=False)

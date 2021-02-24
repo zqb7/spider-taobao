@@ -7,22 +7,12 @@
 docker run --name splash -d -p 8050:8050 scrapinghub/splash
 ```
 
-2. [Jserver](https://hub.docker.com/r/sadeye/jserver): 使用golang封装的js解释服务，把要执行的js脚本让服务器运行并返回结果。
-```
-docker run --name jserver -d -p 18080:8080 sadeye/jserver:slim
-```
-
-3. 复制config.example.yml到与其同级目录为config.yml,替换其中的SPLASH和JServer的地址与端口
+2. 复制config.example.yml到与其同级目录为config.yml,替换其中的SPLASH和JServer的地址与端口
 ```
 SPLASH:
   # It't docker image for scrapinghub/splash
   URL: 192.168.121.128
   PORT: 8050
-
-JServer:
-  # It't docker image for sadeye/jserver:slim
-  URL: 192.168.121.128
-  PORT: 18080
 ```
 
 ## Quick start

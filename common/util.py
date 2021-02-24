@@ -49,31 +49,6 @@ class Cookie(object):
             exit(1)
 
 
-class JServer(object):
-    """
-    上传js文件流到服务器,让服务器解释js脚本并返回结果
-    """
-    def __init__(self, payload="Date.now()"):
-        self.conf = Config().conf
-        self.jServer = "{0}:{1}".format(self.conf["JServer"]["URL"], self.conf["JServer"]["PORT"])
-        self.req = requests.Session()
-        self.payload = payload
-        self.get(self.payload)
-
-    def get(self, payload):
-        try:
-
-            r = self.req.post(url="http://%s/jsFile" % self.jServer,
-                              # files={"file":("文件名","文件流")}
-                              files={'file': (str(time.time()) + '.js', io.StringIO(payload))},
-                              timeout=10
-                              )
-            return r.json()
-        except Exception as e:
-            print(e)
-            return None
-
-
 def generate_js(page_number, token):
     """
     该函数已确保生成的sign是正确的
