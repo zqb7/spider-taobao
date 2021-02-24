@@ -1,5 +1,8 @@
 # 闲鱼爬虫
 
+## 提示
+闲鱼网页端，官方已停止维护。此脚本已不能使用
+
 ## 准备环境
 
 1. [Splash](https://splash.readthedocs.io/en/stable/):一个js渲染服务
